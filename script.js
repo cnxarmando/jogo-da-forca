@@ -531,9 +531,9 @@ function carregaImagemForca() {
   }
 }
 
-let letrasIncorretas = []
 
 //Mostra as letras incorretas na tela
+let letrasIncorretas = []
 function mostrarLetraIncorretaNaTela() {
   let sectionLetrasErradas = document.querySelector('.letras-erradas')  
   const letraNaTela = document.querySelector('#letras-erradas')
