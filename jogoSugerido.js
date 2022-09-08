@@ -11,6 +11,11 @@ escreverPalavra = () => {
 }
 escreverPalavra(titulo)
 
+function alterarFundo() {
+  let fundo = document.querySelector('#background')
+  fundo.style.display = 'block'
+}
+
 setTimeout(() => {
   // Função para agrardar o carregamento da página
   palavraCategoriaSugerida()
@@ -195,6 +200,7 @@ function comparalistas(letra) {
   }
 
   if (vitoria == true) {
+    alterarFundo()
     abreModal(`PARABÉNS! "Você venceu...`)
     tentativas = 0
   }
