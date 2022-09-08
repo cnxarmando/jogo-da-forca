@@ -1,39 +1,33 @@
 let tentativas = 6
-let palavraSugerida = ''
-let categoriaSugerida = ''
-
-let palavraDinamica = []
-let letrasIncorretas = []
-
-let letraCapturadaMouse = document.addEventListener('click', e => {
-  letraCapturadaMouse = e.target.value
-})
 
 const titulo = document.querySelector('h1')
-escreverPalavra = () => {  /// Função para escrever o h1
+escreverPalavra = () => {
+  /// Função para escrever o h1
   const tituloArray = titulo.innerHTML.split('')
   titulo.innerHTML = ''
   tituloArray.forEach((letra, i) => {
-    setTimeout(() => (titulo.innerHTML += letra ), 120 * i)
+    setTimeout(() => (titulo.innerHTML += letra), 120 * i)
   })
 }
 escreverPalavra(titulo)
 
-setTimeout(() => { // Função para agrardar o carregamento da página
+setTimeout(() => {
+  // Função para agrardar o carregamento da página
   palavraCategoriaSugerida()
   montarPalavraNaTela()
 }, 2000)
 
 //Função palavra e categoria sugeridas
+let palavraSugerida = ''
+let categoriaSugerida = ''
 function palavraCategoriaSugerida() {
-  palavraSugerida = prompt(
-    'Digite uma palavra para o jogo'
-    ).toUpperCase()
+  palavraSugerida = prompt('Digite uma palavra para o jogo').toUpperCase()
   categoriaSugerida = prompt(
     'Digite uma categoria para a palavra'
   ).toUpperCase()
 }
 
+let palavraDinamica = []
 function montarPalavraNaTela() {
   const categoria = document.querySelector('#categoria')
   categoria.innerHTML = categoriaSugerida
@@ -147,19 +141,30 @@ function verificaLetraEscolhida(letra) {
     comparalistas(letra)
     montarPalavraNaTela()
     setTimeout(() => {
-      mostrarLetraIncorretaNaTela()
-      }, 100)
+    mostrarLetraIncorretaNaTela()
+    }, 100)
   }
 }
 
+
+let letraCapturadaMouse = document.addEventListener('click', e => {
+  letraCapturadaMouse = e.target.value
+  console.log(letraCapturadaMouse)
+})
 function mudarStyleLetra(tecla) {
   setTimeout(() => {
-  if (palavraSugerida.indexOf(letraCapturadaMouse || letraEscolhidaTeclado) >= 0) {
-    document.querySelector(tecla).style.background = '#10E93F'
-    document.querySelector(tecla).style.color = '#ffffff'
-  } else if (palavraSugerida.indexOf(letraCapturadaMouse || letraEscolhidaTeclado) == -1) {
-    document.querySelector(tecla).style.background = '#FF0000'
-  }
+    if (
+      palavraSugerida.indexOf(letraCapturadaMouse || letraEscolhidaTeclado) >= 0
+    ) {
+      document.querySelector(tecla).style.background = '#10E93F'
+      document.querySelector(tecla).style.color = '#ffffff'
+    } else if (
+      palavraSugerida.indexOf(letraCapturadaMouse || letraEscolhidaTeclado) ==
+      -1
+    ) {
+      document.querySelector(tecla).style.background = '#FF0000'
+      letrasIncorretas.push(letraCapturadaMouse || letraEscolhidaTeclado)
+    }
   }, 100)
 }
 
@@ -228,10 +233,20 @@ function carregaImagemForca() {
   }
 }
 
-//mostra as letras incorretas na tela
-function mostrarLetraIncorretaNaTela() {  
+//Mostra as letras incorretas na tela
+let letrasIncorretas = []
+function mostrarLetraIncorretaNaTela() {
+  let sectionLetrasErradas = document.querySelector('.letras-erradas')  
   const letraNaTela = document.querySelector('#letras-erradas')
-  letraNaTela.innerHTML = letrasIncorretas  
+  if(letrasIncorretas.length > 0) {
+  sectionLetrasErradas.style.display = 'block'
+  letraNaTela.innerHTML = letraNaTela.innerHTML +
+  "<p>" +
+  letrasIncorretas +
+  '</p>'
+  letrasIncorretas = letrasIncorretas.slice(0, -1)
+  console.log(letrasIncorretas)
+  }
 }
 
 function abreModal(mensagem) {
