@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Jogo da forca</title>
+  </head>
+<body>
+  <main>
+    <h1>Jogo da forca</h1>
+    <section>
+      <h3>Aqui sua diverção vem acompanhada de conhecimento</h3>
+      <p>Escolha como você quer jogar</p>
+      <div class="botoes">
+        <a href="./jogo.html" id="jogar" onclick="jogar()"><button>Jogar</button></a>
+        <a href="./jogo.html"><button id="jogoSugerido" onclick="jogosugerido()">Jogar - Sugerir palavras e temas</button></a>
+        <button id="instrucoes" onclick="instrucoes()">Instruções</button>
+      </div>
+    </section>
+
+  </main>
+  <footer>
+    <p>Desenvolvido por Armando Freitas</p>
+    <div class="contato">
+      <a href="https://github.com/cnxarmando" target="_blank"><img src="./img/social/github.png" alt="github" srcset=""></a>
+      <a href="https://www.linkedin.com/in/armando-freitas/" target="_blank"><img src="./img/social/linkedin.png" alt="linkedin" srcset=""></a>
+    </div>
+  </footer>
+  <script>
+    function instrucoes() {
+      alert("O jogo da forca é um jogo de adivinhação, onde os jogadores irão testar seus conhecimentos ao tentar adinvinhar a palavra, tendo o tema e o número de letras sublinhados como dica. Você pode usar o mouse ou teclado para selecionar a letra. O jogador tem direito a 6 erros e para cada erro aparecerá uma parte do avatar, caso erre 6 vezes, o jogo acaba e o jogador perde. Para cada acerto, a letra fica na cor verde e para cada letra errada a letra fica na cor VERMELHA. Você poderá escolher informar um TEMA e uma PALAVRA para jogar com seu amigo. Boa sorte!")
+    }
+  </script>
+</body>
+</html>
