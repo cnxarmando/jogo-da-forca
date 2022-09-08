@@ -9,6 +9,11 @@ escreverPalavra = () => {
 }
 escreverPalavra(titulo)
 
+function alterarFundo() {
+  let fundo = document.querySelector('#background')
+  fundo.style.display = 'block'
+}
+
 let palavraSecretaCategoria = ''
 let palavraSecretaSorteada = ''
 const palavras = [
@@ -493,6 +498,7 @@ function comparalistas(letra) {
   }
 
   if (vitoria == true) {
+    alterarFundo()
     abreModal(`PARABÉNS! "Você venceu...`)
     tentativas = 0
   }
