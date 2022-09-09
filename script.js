@@ -571,5 +571,5 @@ bntReiniciar.addEventListener('click', function () {
 })
 
 function instrucoes() {
-  alert("O jogo da forca é um jogo de adivinhação, onde os jogadores irão testar seus conhecimentos ao tentar adinvinhar a palavra, tendo o tema e o número de letras sublinhados como dica. Você pode usar o mouse ou teclado para selecionar a letra. O jogador tem direito a 6 erros e para cada erro aparecerá uma parte do avatar, caso erre 6 vezes, o jogo acaba e o jogador perde. Para cada acerto, a letra fica na cor verde e para cada letra errada a letra fica na cor VERMELHA. Você poderá escolher informar um TEMA e uma PALAVRA para jogar com seu amigo. Boa sorte!")
+  alert("O jogo da forca é um jogo de adivinhação, onde os jogadores irão testar seus conhecimentos ao tentar descobrir a palavra, tendo o tema e o número de letras sublinhados como dica. Você pode usar o mouse ou teclado para selecionar a letra. O jogador pode cometer 5 erros e para cada erro aparecerá uma parte do avatar, caso erre 6 vezes, o jogo acaba e o jogador perde. Para cada acerto, a letra fica na cor verde e para cada letra errada a letra fica na cor VERMELHA. Você poderá escolher informar um TEMA e uma PALAVRA para jogar com seu amigo. Boa sorte!")
 }
