@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Source+Code+Pro:ital@0;1&display=swap');
 
+:root {
+  --color-primary: #10e937;
+  --color-secundary: #8b008b;
+  --color-tertiary: #1038e9;
+  --color-background-botao: #10e937;
+  --color-background: #1d1d1d;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -8,9 +16,10 @@
 }
 
 body {
-  height: 100%;
+  width: 100%;
+  height: 100vh;
   margin: 0 auto;
-  background-color: rgb(20, 20, 20);
+  background-color: var(--color-background);
   font-family: 'source code pro', sans-serif;
 }
 
@@ -25,7 +34,17 @@ body {
   z-index: -1;
 }
 
+.container-jogo {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .container {
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -238,175 +257,171 @@ footer img:hover {
   transition: 0.7s;
 }
 
-@media (min-width: 320px) and (max-width: 480px) {
-  body {
-    width: 100%;
-    height: 100vh;
-  }
+/* ==========@media=================== */
 
-  main {
-    width: 100%;
+@media (min-width: 320px) and (max-width: 480px) {
+  .container-jogo {
+    width: 90%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  h1 {
+  .container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 1rem 0;
+    padding: 1rem 0;
+  }
+
+  .container h1 {
     margin: 2rem 0 2rem 0;
     padding: 1rem 0;
     font-size: 3rem;
+  }
+
+  #imagem {
+    width: 20rem;
+    height: 27rem;
+    padding: 1rem;
+  }
+
+  #palavra-secreta {
+    font-size: 1.3rem;
+  }
+  
+  .letras {
+    width: 1.5rem;
   }
 
   .teclas {
     display: none;
   }
 
-  #palavra-secreta {
-    font-size: 1.3rem;
-  }
-
-  .letras {
-    width: 1.5rem;
-  }
-
-  #categoria {
-    font-size: 1.5rem;
-    margin: 0;
-  }
-
   .btnReiniciar {
     display: flex;
     align-items: center;
     width: 100%;
-    height: auto;
-    
+    height: auto;    
+  }
+
+  #categoria {
+    font-size: 1.5rem;
   }
 
   .letras-erradas {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    position: relative;
-    top: 12rem;
-    right: 1rem;
-    width: 15rem;
-    height: auto;
-    float: right;
+    margin-bottom: 15rem;
+    position: static;
     background-color: #ffffff;
     padding: 0.3rem;
     border-radius: 1rem;
     box-shadow: 0.3rem 0.3rem 1rem rgb(0, 197, 0);
-    align-items: center;
-    justify-content: center;
   }
 
   footer {
     width: 100%;
-    height: 20%;
+    height: auto;    
     background-color: #212221;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
+    align-items: center;    
     padding-top: 3rem;
+    bottom: 0;
+    position: fixed;
   }
 }
 
 @media (min-width: 481px) and (max-width: 768px) {
-  body {
-    width: 100%;
-    height: 100vh;
-  }
-
-  main {
-    width: 100%;
+  .container-jogo {
+    width: 90%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
   }
 
-  h1 {
+  .container {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 2rem 0 1rem 0;
+    padding: 1rem 0;
+  }
+
+  .container h1 {
     margin: 2rem 0 2rem 0;
     padding: 1rem 0;
     font-size: 3rem;
   }
 
+  #imagem {
+    width: 20rem;
+    height: 27rem;
+    padding: 1rem;
+  }
+
   #palavra-secreta {
     font-size: 1.3rem;
   }
-
+  
   .letras {
     width: 1.5rem;
   }
 
-  #categoria {
-    font-size: 1.5rem;
-    margin: 0;
+  .teclas {
+    display: none;
   }
 
   .btnReiniciar {
     display: flex;
     align-items: center;
     width: 100%;
-    height: auto;
-    
+    height: auto;    
+  }
+
+  #categoria {
+    font-size: 1.5rem;
   }
 
   .letras-erradas {
     display: flex;
     flex-direction: column;
-    margin: 0 auto;
-    position: relative;
-    top: 12rem;
-    right: 1rem;
-    width: 15rem;
-    height: auto;
-    float: right;
+    margin-bottom: 15rem;
+    position: static;
     background-color: #ffffff;
     padding: 0.3rem;
     border-radius: 1rem;
     box-shadow: 0.3rem 0.3rem 1rem rgb(0, 197, 0);
-    align-items: center;
-    justify-content: center;
   }
 
   footer {
     width: 100%;
-    height: 20%;
+    height: auto;    
     background-color: #212221;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    margin-top: 3rem;
+    align-items: center;    
     padding-top: 3rem;
-  }
-}
-
-
-@media (max-width: 720px) {
-  .teclas input {
-    width: 3.6rem;
-    height: 3.6rem;
-  }
-
-  #palavra-secreta {
-    font-size: 1.5rem;
-  }
-
-  .letras {
-    width: 2rem;
-  }
-
-  #categoria {
-    font-size: 1.6rem;
-  }
-
-  .letras-erradas {
-    display: none;
+    bottom: 0;
+    position: fixed;
   }
 }
 

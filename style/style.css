@@ -1,5 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Source+Code+Pro:ital@0;1&display=swap');
 
+:root {
+  --color-primary: #10e937;
+  --color-secundary: #8b008b;
+  --color-tertiary: #1038e9;
+  --color-background-botao: #10e937;
+  --color-background: #1d1d1d;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -8,41 +16,56 @@
 }
 
 body {
+  width: 100%;
   height: 100vh;
-  background-color: rgb(20, 20, 20);
+  margin: 0 auto;
+  background-color: var(--color-background);
   font-family: 'source code pro', sans-serif;
 }
 
-main {
-  height: 80%;
+.container-index {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-h1 {
+.container-index h1 {
   font-family: 'dancing script', cursive;
   padding: 3rem 0;
   font-size: 5rem;
-  font-weight: 400;
-  color: #10E93F;
+  color: var(--color-primary);
   text-align: center;
   text-transform: uppercase;
 }
 
-h3 {
+.container-index section {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.container-index h3 {
   padding-bottom: 3rem;
   font-size: 2.5rem;
   font-weight: 400;
-  color: #10E93F;
+  color: var(--color-primary);
   text-align: center;
 }
 
-p {
+.container-index p {
   font-size: 2rem;
-  color: #10E93F;
+  color: var(--color-primary);
   text-align: center;
 }
 
 .botoes {
-  width: 80%;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -60,14 +83,14 @@ p {
   width: 100%;
   height: auto;
   font-size: 1.8rem;
-  background-color:#10E93F;
+  background-color: var(--color-background-botao);
 }
 
 .botoes button {
   width: 50%;
   height: auto;
   font-size: 1.8rem;
-  background-color: #10E93F;
+  background-color: var(--color-background-botao);
   border: none;
   border-radius: 1rem;
   margin: 1rem auto;
@@ -78,8 +101,9 @@ p {
 }
 
 .botoes button:hover {
-  background-color: #10E93F;
-  box-shadow:  1rem 0rem 1rem #080cf8;
+  background-color: var(--color-tertiary);
+  color: white;
+  box-shadow: 1rem 0rem 1rem #4a4a4d;
   transform: scale(1.1);
 }
 
@@ -91,6 +115,8 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  bottom: 0;
+  position: fixed;
 }
 
 footer p {
@@ -117,4 +143,104 @@ footer img:hover {
   border-radius: 100%;
   transform: scale(1.1);
   transition: 0.7s;
+}
+
+@media (max-width: 480px) {
+  .container-index {
+    width: 90%;
+  }
+
+  .container-index h1 {
+    font-size: 3rem;
+  }
+
+  .container-index h3 {
+    font-size: 2rem;
+  }
+
+  .container-index p {
+    font-size: 1.8rem;
+  }
+
+  .botoes a {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+
+  .botoes button {
+    width: 90%;
+    font-size: 2rem;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 1.5rem;
+  }
+
+  footer a {
+    font-size: 2rem;
+  }
+
+  footer img {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+@media (min-width: 481px) and (max-width: 768px) {
+  .container-index {
+    width: 90%;
+  }
+
+  .container-index h1 {
+    font-size: 3rem;
+  }
+
+  .container-index h3 {
+    font-size: 2rem;
+  }
+
+  .container-index p {
+    font-size: 1.8rem;
+  }
+
+  .botoes a {
+    width: 90%;
+    font-size: 1.5rem;
+  }
+
+  .botoes button {
+    width: 90%;
+    font-size: 2rem;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+  }
+
+  footer p {
+    font-size: 1.5rem;
+  }
+
+  footer a {
+    font-size: 2rem;
+  }
+
+  footer img {
+    width: 4rem;
+    height: 4rem;
+  }
 }
