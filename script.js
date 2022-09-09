@@ -9,6 +9,18 @@ escreverPalavra = () => {
 }
 escreverPalavra(titulo)
 
+function capturarinput() {
+  const input = document.querySelector('#input')
+  input.addEventListener('keyup', (e) => {
+    if (e.keyCode === 13) {
+      verificaLetraEscolhida(input.value)
+      input.value = ''
+    }
+  })
+}
+
+let input = document.querySelector('input')
+
 function alterarFundo() {
   let fundo = document.querySelector('#background')
   fundo.style.display = 'block'
