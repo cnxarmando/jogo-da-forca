@@ -15,9 +15,15 @@
   font-size: 10px;
 }
 
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+
 body {
   width: 100%;
-  height: 100vh;
+  height: 20rem;
+  /* Atenção */
   margin: 0 auto;
   background-color: var(--color-background);
   font-family: 'source code pro', sans-serif;
@@ -35,7 +41,7 @@ body {
 }
 
 .container-jogo {
-  width: 80%;
+  width: 90%;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -55,8 +61,7 @@ body {
 h1 {
   font-family: 'dancing script', cursive;
   padding: 2rem 0;
-  font-size: 5rem;
-  font-weight: 400;
+  font-size: 3rem;
   color: #10E93F;
   text-align: center;
   text-transform: uppercase;
@@ -75,7 +80,7 @@ h1 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: 3rem;
+  font-size: 2rem;
   margin-top: 3rem;
 }
 
@@ -99,8 +104,8 @@ h1 {
   margin-right: 0.2rem;
 }
 
-#teclado {
-  margin-top: 3rem;
+.teclas {
+  display: none;
 }
 
 .teclas input {
@@ -160,7 +165,8 @@ h1 {
 .btnReiniciar img {
   width: 4rem;
   height: 4rem;
-  margin: 0 auto;
+  margin: 0 1rem;
+  padding: 0 0.3rem;
 }
 
 #categoria {
@@ -172,17 +178,18 @@ h1 {
   border-radius: 1rem;
 }
 
-/* ===============ASIDE======================== */
+/* ===============Letras erradas======================== */
 .letras-erradas {
   display: flex;
   flex-direction: column;
-  position: absolute;
-  top: 12rem;
+  /* position: absolute; */
+  /* top: 12rem;
   right: 1rem;
   width: 15rem;
   height: auto;
-  float: right;
+  float: right; */
   background-color: #ffffff;
+  margin: 1rem;
   padding: 1rem;
   border-radius: 1rem;
   box-shadow: 0.3rem 0.3rem 1rem rgb(0, 197, 0);
@@ -222,14 +229,13 @@ h1 {
 /* ==============FOOTER============================= */
 footer {
   width: 100%;
-  height: 20%;
   background-color: #212221;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
+  position: relative;
+  padding: 2rem;
   margin-top: 3rem;
-  padding-top: 3rem;
 }
 
 footer p {
@@ -240,7 +246,6 @@ footer p {
 
 footer a {
   color: #10E93F;
-  font-size: 1.5rem;
   padding: 1rem;
 }
 
@@ -258,175 +263,53 @@ footer img:hover {
   transition: 0.7s;
 }
 
-/* ==========@media=================== */
+/* ============Media=================== */
 
-@media (min-width: 320px) and (max-width: 480px) {
+@media (min-width: 768px) {
   .container-jogo {
-    width: 90%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 2rem 0 1rem 0;
-    padding: 1rem 0;
-  }
-
-  .container h1 {
-    margin: 2rem 0 2rem 0;
-    padding: 1rem 0;
-    font-size: 3rem;
-  }
-
-  #imagem {
-    width: 20rem;
-    height: 27rem;
-    padding: 1rem;
-  }
-
-  #palavra-secreta {
-    font-size: 1.3rem;
+    width: 80%;
   }
   
-  .letras {
-    width: 1.5rem;
+  h1 {
+    font-size: 5rem;
+  }
+  
+  .letrasEspaco {
+    width: 1.6rem;
+    text-align: center;
+    color: #ffffff;
+    padding: 0.2rem;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
   }
 
+  #teclado {
+    margin: 2rem 0;
+  }
+  
   .teclas {
-    display: none;
+    display: block;
   }
 
-  .btnReiniciar {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: auto;    
-  }
-
-  #categoria {
-    font-size: 1.5rem;
+  .teclas input {
+    width: 6rem;
+    height: 6rem;
+    font-size: 2rem;
   }
 
   .letras-erradas {
     display: flex;
     flex-direction: column;
-    margin-bottom: 15rem;
-    position: static;
-    background-color: #ffffff;
-    padding: 0.3rem;
-    border-radius: 1rem;
-    box-shadow: 0.3rem 0.3rem 1rem rgb(0, 197, 0);
-  }
-
-  footer {
-    width: 100%;
-    height: auto;    
-    background-color: #212221;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
-    padding-top: 3rem;
-    bottom: 0;
-    position: fixed;
+    position: absolute;
+    top: 20rem;
+    right: 5rem;
+    width: 15rem;
+    height: auto;
+    float: right;
   }
 }
 
-@media (min-width: 481px) and (max-width: 768px) {
-  .container-jogo {
-    width: 90%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-
-  .container {
-    width: 100%;
-    height: auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    margin: 2rem 0 1rem 0;
-    padding: 1rem 0;
-  }
-
-  .container h1 {
-    margin: 2rem 0 2rem 0;
-    padding: 1rem 0;
-    font-size: 3rem;
-  }
-
-  #imagem {
-    width: 20rem;
-    height: 27rem;
-    padding: 1rem;
-  }
-
-  #palavra-secreta {
-    font-size: 1.3rem;
-  }
-  
-  .letras {
-    width: 1.5rem;
-  }
-
-  .teclas {
-    display: none;
-  }
-
-  .btnReiniciar {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    height: auto;    
-  }
-
-  #categoria {
-    font-size: 1.5rem;
-  }
-
-  .letras-erradas {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 15rem;
-    position: static;
-    background-color: #ffffff;
-    padding: 0.3rem;
-    border-radius: 1rem;
-    box-shadow: 0.3rem 0.3rem 1rem rgb(0, 197, 0);
-  }
-
-  footer {
-    width: 100%;
-    height: auto;    
-    background-color: #212221;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;    
-    padding-top: 3rem;
-    bottom: 0;
-    position: fixed;
-  }
-}
-
-@media (min-width: 769px) {
+@media (min-width: 1024px) {
   .teclas input {
     width: 6rem;
     height: 6rem;
@@ -445,3 +328,4 @@ footer img:hover {
     font-size: 2rem;
   }
 }
+

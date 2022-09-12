@@ -9,17 +9,21 @@ escreverPalavra = () => {
 }
 escreverPalavra(titulo)
 
-function capturarinput() {
-  const input = document.querySelector('#input')
-  input.addEventListener('keyup', (e) => {
-    if (e.keyCode === 13) {
-      verificaLetraEscolhida(input.value)
-      input.value = ''
-    }
-  })
-}
+// let largura = window.innerWidth
 
-let input = document.querySelector('input')
+// function capturarinput() {
+//   let input = document.addEventListener().querySelector('#input')
+//   if(largura < 724){
+//     input.style.display = 'none'
+//   }
+//   input.addEventListener('keyup', (e) => {
+//     if (e.keyCode === 13) {
+//       verificaLetraEscolhida(input.value)
+//       input.value = ''
+//       console.log(input.value)
+//     }
+//   })
+// }
 
 function alterarFundo() {
   let fundo = document.querySelector('#background')
