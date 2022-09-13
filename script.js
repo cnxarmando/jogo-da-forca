@@ -9,21 +9,31 @@ escreverPalavra = () => {
 }
 escreverPalavra(titulo)
 
-// let largura = window.innerWidth
+// Função que abre o modal de instruçoes
 
-// function capturarinput() {
-//   let input = document.addEventListener().querySelector('#input')
-//   if(largura < 724){
-//     input.style.display = 'none'
-//   }
-//   input.addEventListener('keyup', (e) => {
-//     if (e.keyCode === 13) {
-//       verificaLetraEscolhida(input.value)
-//       input.value = ''
-//       console.log(input.value)
-//     }
-//   })
-// }
+let abreInstrucao = document.querySelector('#abreModal')
+abreInstrucao.addEventListener('click', instrucoesModal)
+let fecharInstrucao = document.querySelector('#fecharmodal')
+fecharInstrucao.addEventListener('click', fecharModal)
+
+let modal = document.querySelector('#modal')
+
+function instrucoesModal() {  
+  modal.style.display = 'block'
+}
+
+function fecharModal() {
+  modal.style.display = 'none'
+}
+
+// Função que verifica a largura da tela
+document.body.onresize = function() {
+  let input = document.querySelector('.entrada-letra')
+  if (document.body.clientWidth < 768) {
+    console.log('menor que 768')
+      input.style.display = 'block'
+  }
+}
 
 function alterarFundo() {
   let fundo = document.querySelector('#background')
@@ -585,7 +595,3 @@ let bntReiniciar = document.querySelector('#btnReiniciar')
 bntReiniciar.addEventListener('click', function () {
   location.reload()
 })
-
-function instrucoes() {
-  alert("O jogo da forca é um jogo de adivinhação, onde os jogadores irão testar seus conhecimentos ao tentar descobrir a palavra, tendo o tema e o número de letras sublinhados como dica. Você pode usar o mouse ou teclado para selecionar a letra. O jogador pode cometer 5 erros e para cada erro aparecerá uma parte do avatar, caso erre 6 vezes, o jogo acaba e o jogador perde. Para cada acerto, a letra fica na cor verde e para cada letra errada a letra fica na cor VERMELHA. Você poderá escolher informar um TEMA e uma PALAVRA para jogar com seu amigo. Boa sorte!")
-}
