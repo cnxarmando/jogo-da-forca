@@ -225,7 +225,7 @@ footer img:hover {
     width: 80%;
   }
 
-  input .entrada-letra {
+  #entrada-letra {
     display: none;
   }
 }
@@ -253,7 +253,7 @@ footer img:hover {
     width: 80%;
   }
 
-  input .entrada-letra {
+  #entrada-letra {
     display: none;
   }
 }
