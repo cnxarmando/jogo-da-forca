@@ -4,21 +4,15 @@ escreverPalavra = () => {
   const tituloArray = titulo.innerHTML.split('')
   titulo.innerHTML = ''
   tituloArray.forEach((letra, i) => {
-    setTimeout(() => (titulo.innerHTML += letra ), 120 * i)
+    setTimeout(() => (titulo.innerHTML += letra), 120 * i)
   })
 }
 escreverPalavra(titulo)
 
 // Função que abre o modal de instruçoes
-
-let abreInstrucao = document.querySelector('#abreModal')
-abreInstrucao.addEventListener('click', instrucoesModal)
-let fecharInstrucao = document.querySelector('#fecharmodal')
-fecharInstrucao.addEventListener('click', fecharModal)
-
 let modal = document.querySelector('#modal')
 
-function instrucoesModal() {  
+function instrucoesModal() {
   modal.style.display = 'block'
 }
 
@@ -26,15 +20,7 @@ function fecharModal() {
   modal.style.display = 'none'
 }
 
-// Função que verifica a largura da tela
-document.body.onresize = function() {
-  let input = document.querySelector('.entrada-letra')
-  if (document.body.clientWidth < 768) {
-    console.log('menor que 768')
-      input.style.display = 'block'
-  }
-}
-
+// Função altera fundo em caso de vitória
 function alterarFundo() {
   let fundo = document.querySelector('#background')
   fundo.style.display = 'block'
@@ -348,9 +334,9 @@ const palavras = [
     categoria: 'ACÃO'
   })
 ]
-const indexPalavra = parseInt(Math.random() * palavras.length)
 
 function criarPalavraSecreta() {
+  const indexPalavra = parseInt(Math.random() * palavras.length)
   palavraSecretaSorteada = palavras[indexPalavra].nome
   palavraSecretaCategoria = palavras[indexPalavra].categoria
 }
@@ -400,7 +386,6 @@ function montarPalavraNaTela() {
   }
 }
 montarPalavraNaTela()
-
 
 function verificarLetra(e) {
   e = e || window.event
@@ -467,13 +452,13 @@ let letraEscolhidaTeclado = (document.onkeypress = e => {
 
 let tentativas = 6
 
-function verificaLetraEscolhida(letra) {  
+function verificaLetraEscolhida(letra) {
   if (tentativas > 0) {
     comparalistas(letra)
-    montarPalavraNaTela()    
+    montarPalavraNaTela()
     mudarStyleLetra('#tecla-' + letra)
     setTimeout(() => {
-    mostrarLetraIncorretaNaTela()
+      mostrarLetraIncorretaNaTela()
     }, 100)
   }
 }
@@ -484,13 +469,21 @@ let letraCapturadaMouse = document.addEventListener('click', e => {
 
 function mudarStyleLetra(tecla) {
   setTimeout(() => {
-  if (palavraSecretaSorteada.indexOf(letraCapturadaMouse || letraEscolhidaTeclado) >= 0) {
-    document.querySelector(tecla).style.background = '#10E93F'
-    document.querySelector(tecla).style.color = '#ffffff'
-  } else if (palavraSecretaSorteada.indexOf(letraCapturadaMouse || letraEscolhidaTeclado) == -1) {
-    document.querySelector(tecla).style.background = '#FF0000'
-    letrasIncorretas.push(letraCapturadaMouse || letraEscolhidaTeclado)
-  }
+    if (
+      palavraSecretaSorteada.indexOf(
+        letraCapturadaMouse || letraEscolhidaTeclado
+      ) >= 0
+    ) {
+      document.querySelector(tecla).style.background = '#10E93F'
+      document.querySelector(tecla).style.color = '#ffffff'
+    } else if (
+      palavraSecretaSorteada.indexOf(
+        letraCapturadaMouse || letraEscolhidaTeclado
+      ) == -1
+    ) {
+      document.querySelector(tecla).style.background = '#FF0000'
+      letrasIncorretas.push(letraCapturadaMouse || letraEscolhidaTeclado)
+    }
   }, 100)
 }
 
@@ -498,7 +491,6 @@ let posicao = ''
 
 function comparalistas(letra) {
   posicao = palavraSecretaSorteada.indexOf(letra)
-  console.log(posicao)
   if (posicao < 0) {
     tentativas--
     carregaImagemForca()
@@ -563,22 +555,18 @@ function carregaImagemForca() {
   }
 }
 
-
 //Mostra as letras incorretas na tela
 let letrasIncorretas = []
 function mostrarLetraIncorretaNaTela() {
-  let sectionLetrasErradas = document.querySelector('.letras-erradas')  
+  let sectionLetrasErradas = document.querySelector('.letras-erradas')
   const letraNaTela = document.querySelector('#letras-erradas')
-  if(letrasIncorretas.length > 0) {
-  sectionLetrasErradas.style.display = 'block'
-  letraNaTela.innerHTML = letraNaTela.innerHTML +
-  "<p>" +
-  letrasIncorretas +
-  '</p>'
-  letrasIncorretas = letrasIncorretas.slice(0, -1)
+  if (letrasIncorretas.length > 0) {
+    sectionLetrasErradas.style.display = 'block'
+    letraNaTela.innerHTML =
+      letraNaTela.innerHTML + '<p>' + letrasIncorretas + '</p>'
+    letrasIncorretas = letrasIncorretas.slice(0, -1)
   }
 }
-
 
 function abreModal(mensagem) {
   setTimeout(() => {
