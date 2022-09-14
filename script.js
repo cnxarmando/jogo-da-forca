@@ -468,6 +468,7 @@ let letraCapturadaMouse = document.addEventListener('click', e => {
   
 })
 
+// Função que captura a letra digitada no input e verifica se a letra existe na palavra secreta
 let letraInput = document.getElementById('input-letra').value
 let letraInputMaiuscula = letraInput.toUpperCase()
 console.log(letraInputMaiuscula)
