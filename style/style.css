@@ -136,11 +136,13 @@ body {
 .modal-content h3 {
   text-align: center;
   text-transform: uppercase;
+  color: var(--color-background);
   padding: 1rem 0;
 }
 
 .modal-content p {
   text-align: justify;
+  color: var(--color-background);
   padding: 1rem 0;
 }
 

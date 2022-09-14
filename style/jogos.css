@@ -17,13 +17,11 @@
 
 html {
   scroll-behavior: smooth;
-  overflow-y: scroll;
 }
 
 body {
   width: 100%;
   height: 100%;
-  /* Atenção */
   margin: 0 auto;
   background-color: var(--color-background);
   font-family: 'source code pro', sans-serif;
@@ -76,10 +74,24 @@ h1 {
 }
 
 
-/* div .entrada-letra {
-  visibility: hidden;
-  width: 100%;
-} */
+#entrada-letra {
+  display: flex;
+  visibility: visible;
+  margin: 2rem auto;
+  width: 90%;
+}
+
+#entrada-letra input {
+  width: 50%;
+  margin: 0 auto;
+  height: 3rem;
+  border: none;
+  border-radius: 5px;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  color: var(--color-background);
+  background-color: #999898;
+}
 
 #palavra-secreta {
   display: flex;
@@ -289,6 +301,10 @@ footer img:hover {
     margin-right: 0.2rem;
   }
 
+  #entrada-letra {
+    visibility: hidden;
+  }
+
   #teclado {
     margin: 2rem 0;
   }
@@ -324,6 +340,11 @@ footer img:hover {
 
   #palavra-secreta {
     font-size: 2.5rem;
+  }
+
+  #entrada-letra {
+    visibility: hidden;
+    
   }
 
   .letras {
