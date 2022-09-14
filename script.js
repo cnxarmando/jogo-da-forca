@@ -465,7 +465,17 @@ function verificaLetraEscolhida(letra) {
 
 let letraCapturadaMouse = document.addEventListener('click', e => {
   letraCapturadaMouse = e.target.value
+  
 })
+
+let letraInput = document.getElementById('input-letra').value
+let letraInputMaiuscula = letraInput.toUpperCase()
+console.log(letraInputMaiuscula)
+function buscaInput() {
+  letraInput = document.getElementById('input-letra').value = ''
+  verificaLetraEscolhida(letraInputMaiuscula)
+  letraInputMaiuscula = ''  
+}
 
 function mudarStyleLetra(tecla) {
   setTimeout(() => {
