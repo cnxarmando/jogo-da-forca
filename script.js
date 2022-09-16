@@ -393,6 +393,19 @@ function verificarLetra(e) {
   return String.fromCharCode(key)
 }
 
+let letraCapturadaMouse = document.addEventListener('click', e => {
+  letraCapturadaMouse = e.target.value
+})
+
+// Função que captura a letra digitada no input e verifica se a letra existe na palavra secreta
+let letraInput = document
+  .getElementById('input-letra')
+  .addEventListener('keypress', e => {
+    console.log(e)
+    verificarLetra(e)
+    document.getElementById('input-letra').value = ''
+  })
+
 let letraEscolhidaTeclado = (document.onkeypress = e => {
   letraEscolhidaTeclado = verificarLetra(e).toUpperCase()
   if (letraEscolhidaTeclado == 'A') {
@@ -461,21 +474,6 @@ function verificaLetraEscolhida(letra) {
       mostrarLetraIncorretaNaTela()
     }, 100)
   }
-}
-
-let letraCapturadaMouse = document.addEventListener('click', e => {
-  letraCapturadaMouse = e.target.value
-  
-})
-
-// Função que captura a letra digitada no input e verifica se a letra existe na palavra secreta
-let letraInput = document.getElementById('input-letra').value
-let letraInputMaiuscula = letraInput.toUpperCase()
-console.log(letraInputMaiuscula)
-function buscaInput() {
-  letraInput = document.getElementById('input-letra').value = ''
-  verificaLetraEscolhida(letraInputMaiuscula)
-  letraInputMaiuscula = ''  
 }
 
 function mudarStyleLetra(tecla) {
